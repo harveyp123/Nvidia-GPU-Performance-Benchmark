@@ -37,7 +37,7 @@ if __name__=='__main__':
 
     print('----train with fp32----')
     train(model, input)
-    print('----train with autocast----')
+    print('----train with fp16 autocast----')
     train(model, input, amp_enable=True)
     print('----train with tf32----')
     torch.backends.cuda.matmul.allow_tf32=True
