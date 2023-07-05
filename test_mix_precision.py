@@ -28,7 +28,12 @@ if __name__=='__main__':
     input=torch.rand(256,3,384,384).cuda()
 
     # warmup, ignore
+    print('----Warmup----')
     train(model, input)
+
+    torch.backends.cuda.matmul.allow_tf32=False
+    torch.backends.cudnn.allow_tf32=False
+
 
     print('----train with fp32----')
     train(model, input)
