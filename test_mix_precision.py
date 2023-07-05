@@ -25,7 +25,7 @@ if __name__=='__main__':
                        drop_rate=0,
                        drop_path_rate=0.3)
     model.cuda().train()
-    batch_size = 256 #256
+    batch_size = 512 #256
     # input=torch.rand(batch_size,3,384,384).cuda()
     input=torch.rand(batch_size,3,224,224).cuda()
     torch.backends.cuda.matmul.allow_tf32=False
