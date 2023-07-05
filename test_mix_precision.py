@@ -19,15 +19,15 @@ def train(model, input, amp_enable=False):
 
 if __name__=='__main__':
     model_name = ['resnet50', 'vit_small_patch16_384',  'vit_large_patch16_384', 'resnet34']
-    model=create_model(model_name[2],
+    model=create_model(model_name[0],
                        pretrained=False,
                        num_classes=None,
                        drop_rate=0,
                        drop_path_rate=0.3)
     model.cuda().train()
-    batch_size = 64 #256
-    input=torch.rand(batch_size,3,384,384).cuda()
-
+    batch_size = 256 #256
+    # input=torch.rand(batch_size,3,384,384).cuda()
+    input=torch.rand(batch_size,3,224,224).cuda()
     torch.backends.cuda.matmul.allow_tf32=False
     torch.backends.cudnn.allow_tf32=False
 
