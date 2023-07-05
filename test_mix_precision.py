@@ -18,8 +18,8 @@ def train(model, input, amp_enable=False):
     print(f'time used: {time.time()-time_start}')
 
 if __name__=='__main__':
-
-    model=create_model('resnet50', #vit_small_patch16_384  vit_large_patch16_384 resnet34
+    model_name = ['resnet50', 'vit_small_patch16_384',  'vit_large_patch16_384', 'resnet34']
+    model=create_model(model_name[2],
                        pretrained=False,
                        num_classes=None,
                        drop_rate=0,
