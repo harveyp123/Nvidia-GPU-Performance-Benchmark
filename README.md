@@ -10,7 +10,7 @@ conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=
 ```
 
 ## 1. Run code
-Create a environment with pytorch in it
+Run code on the first GPU
 ```sh
 CUDA_VISIBLE_DEVICES=1 python test_mix_precision.py
 ```
